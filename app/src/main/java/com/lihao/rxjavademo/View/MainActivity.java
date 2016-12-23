@@ -1,6 +1,7 @@
 package com.lihao.rxjavademo.View;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.lihao.rxjavademo.Bean.CurUser;
 import com.lihao.rxjavademo.Constant.Constants;
+import com.lihao.rxjavademo.MyService;
 import com.lihao.rxjavademo.Net.Request;
 import com.lihao.rxjavademo.Net.SoapRequest;
 import com.lihao.rxjavademo.R;
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.bt_getlist)
     protected Button getList;
 
+    @BindView(R.id.bt_startservice)
+    protected Button startSErvice;
+
     private Context mContext;
 
     @Override
@@ -55,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mContext = this;
+    }
+
+    @OnClick(R.id.bt_startservice)
+    public void initService() {
+        Intent intent = new Intent(mContext, MyService.class);
+        startService(intent);
     }
 
     @OnClick(R.id.bt_login)

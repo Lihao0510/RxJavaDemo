@@ -45,14 +45,14 @@ public class ListRequest {
         if (!sortName.equals("")){
             sortOrder = "ORDER BY " + sortName + " " + sortOrder;
         }else {
-            sortOrder = "*";
+            sortOrder = "";
         }
         pageSet = getPageSet(pageSize, curPage);
         requestHeader = NetUtil.setSoapHeader();
         property = new PropertyInfo();
         getPropertyInfo(property, requestBody, where);
         envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-        envelope.addMapping(nameSpace, "myPageSet", pageSet.getClass());
+        envelope.addMapping(nameSpace, "pageSet", pageSet.getClass());
         envelope.dotNet = true;
         envelope.headerOut = requestHeader;
         Log.d("Lihao", requestBody.getPropertyCount() + "");

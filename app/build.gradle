@@ -26,12 +26,13 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-
-    compile 'io.reactivex:rxjava:+'
+    compile 'io.reactivex:rxjava:1.2.4'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'commons-codec:commons-codec:1.10'
+    compile 'io.netty:netty-all:5.0.0.Alpha2'
     compile files('libs/AESEncryption.jar')
     compile files('libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar')
+    compile project(':LibMarsdaemon')
 }
